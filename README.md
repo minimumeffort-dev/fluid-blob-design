@@ -1,6 +1,6 @@
 # Fluid Blob Design
 
-Fluid Blob Design is a Codex skill for creating calm, organic blobs that feel like part of a real interface, not a generic shader demo.
+Fluid Blob Design is a Codex skill for creating organic, materially rich blobs that feel like part of a real interface, not a generic shader demo.
 
 It grew out of practical design work around hero blobs, portrait shells, color-season pages, and responsive layouts. The skill helps Codex preserve the colors and composition that already make a project feel distinct.
 
@@ -8,12 +8,12 @@ It grew out of practical design work around hero blobs, portrait shells, color-s
 
 - Large animated hero blobs
 - Portrait shells where the image stays still and the surrounding shape moves
-- Palette-driven WebGPU materials
+- Palette-driven WebGPU materials with moving crossed color fields
 - Lightweight CSS and SVG alternatives
 - Off-screen placement without local clipping or horizontal scrolling
 - Smooth transparent edges, reduced motion, and static fallbacks
 
-The default direction is intentionally restrained. Motion is slow, hover does not move the composition, shadows stay off, and the original palette remains recognizable.
+The default direction is intentional rather than timid. The contour and internal colors change visibly over a few seconds, hover does not move the composition, shadows stay off, and the original palette remains recognizable.
 
 ## Install the skill
 
@@ -69,12 +69,18 @@ Codex can also select the skill automatically when a request clearly involves an
 
 ## Use the vgpu starter in a project
 
-The reusable React and Next.js starter lives in [`assets/vgpu-next`](assets/vgpu-next). It includes the component, renderer, WGSL shader, CSS fallback, and TypeScript declarations.
+The reusable React and Next.js starter lives in [`assets/vgpu-next`](assets/vgpu-next). It includes the component, renderer, layered WGSL material, CSS fallback, deterministic render test, and TypeScript declarations.
 
 Install vgpu in the target project:
 
 ```sh
 npm install vgpu
+```
+
+Install `pngjs` as a development dependency when using the included render test:
+
+```sh
+npm install -D pngjs
 ```
 
 Then ask Codex to adapt the starter to that project's framework, palette, layout, and browser requirements. The detailed setup and validation notes are in [`references/vgpu-pattern.md`](references/vgpu-pattern.md).

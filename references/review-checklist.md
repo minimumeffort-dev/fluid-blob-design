@@ -11,14 +11,17 @@
 ## Color and material
 
 - The supplied palette remains recognizable; no generic rainbow or black center replaced it.
+- Broad body regions come from the supplied palette instead of neutral grey created by over-mixing every color.
 - Highlights are restrained and do not create a milky white tint.
+- Rim and specular light describe the material without becoming a permanent white outline.
 - There is no aurora or colored haze outside the intended shape.
 - No outer shadow reveals the canvas rectangle or changes the page background near an edge.
 - The fallback uses the same palette and roughly the same silhouette.
 
 ## Motion
 
-- The contour morphs slowly without translating around the page.
+- The contour produces a clearly different silhouette over a few seconds without translating around the page.
+- Internal palette regions move independently enough to remain visible at the rendered size.
 - Hover does not move the blob unless explicitly requested.
 - The loop has no visible jump, twitch, or sudden area change.
 - Portrait imagery is stationary while only the surrounding shell moves.
@@ -30,6 +33,8 @@
 - Transparent edges blend cleanly with the page background.
 - DPR is capped, resize updates the render resolution, and no per-frame resources are recreated.
 - The shader is validated with `vgpu check --require-validation`.
+- Two deterministic frames are rendered and their average channel delta passes the project's motion threshold.
+- Static render assertions prove that the shape contains both solid and transparent pixels and never reaches a canvas edge.
 - WebGPU failure leaves a usable static treatment rather than an empty rectangle.
 
 ## Responsive behavior
