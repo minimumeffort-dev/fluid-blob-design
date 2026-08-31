@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fluid Blob Design"
+  short_description: "Create refined animated blobs for web interfaces"
+  default_prompt: "Create or refine a moving fluid blob for this project while preserving its palette, layout, and accessibility."
