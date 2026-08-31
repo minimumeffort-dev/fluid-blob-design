@@ -17,8 +17,6 @@ The default direction is intentionally restrained. Motion is slow, hover does no
 
 ## Install the skill
 
-This repository is private, so your GitHub account needs access to the `minimumeffort-dev` organization.
-
 ### Ask Codex to install it
 
 Open Codex and ask:
